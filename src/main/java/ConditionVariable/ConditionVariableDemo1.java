@@ -1,4 +1,4 @@
-package com.yinliang.thread.ConditionVariable;
+package ConditionVariable;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

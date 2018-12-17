@@ -1,4 +1,4 @@
-package json_demo.com.hankcs;
+package json_demo;
 
 import java.util.Arrays;
 
