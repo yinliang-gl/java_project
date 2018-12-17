@@ -1,4 +1,4 @@
-package JDK_Dynamic_Proxy_Demo.dynamic.proxy;
+package JDK_Dynamic_Proxy_Demo;
 
 import org.junit.Test;
 

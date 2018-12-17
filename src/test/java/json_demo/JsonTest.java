@@ -1,6 +1,6 @@
-package json_demo.com.hankcs;
+package json_demo;
 
-import json_demo.com.hankcs.User;
+import json_demo.User;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.junit.Test;
