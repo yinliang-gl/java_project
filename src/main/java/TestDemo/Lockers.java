@@ -1,3 +1,5 @@
+package TestDemo;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -7,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
- * Lockers
+ * TestDemo.Lockers
  * 在多线程编程里面一个重要的概念是锁定，如果一个资源是多个线程共享的，为了保证数据的完整性，
  * 在进行事务性操作时需要将共享资源锁定，这样可以保证在做事务性操作时只有一个线程能对资源进行操作，
  * 从而保证数据的完整性。在5.0以前，锁定的功能是由Synchronized关键字来实现的。
