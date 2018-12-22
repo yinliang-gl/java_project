@@ -1,4 +1,4 @@
-package TestDemo.JDKDynamicProxyDemo;
+package TestDemo.JdkDynamicProxyDemo;
 
 /**
  * Created by muyux on 2015/11/26.
