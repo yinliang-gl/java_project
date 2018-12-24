@@ -23,10 +23,10 @@ import org.apache.parquet.schema.MessageTypeParser;
 
 /**
  * @author meter
- * 文件名：TestParquetWriter
+ * 文件名：TestParquetReaderAndWriter
  * @描述：
  */
-public class TestParquetWriter {
+public class TestParquetReaderAndWriter {
     private static String parquet_file_path = "test.parq";
 
     private static String schemaStr = "message schema {" + "optional int64 log_id;"
