@@ -140,7 +140,7 @@ public class TestParquetWriter {
      */
     public static void main(String[] args) throws Exception {
 //        testParquetWriter();
-//        testGetSchema();
+        testGetSchema();
 //        testParseSchema();
 
         testParquetReader();
