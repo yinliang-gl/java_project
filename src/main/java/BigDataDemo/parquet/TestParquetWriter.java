@@ -96,7 +96,7 @@ public class TestParquetWriter {
                 "666666", "777777", "888888", "999999", "101010"};
         for (int i = 0; i < 1000; i++) {
             writer.write(groupFactory.newGroup()
-                    .append("log_id", Long.parseLong(access_log[0]))
+                    .append("log_id", Long.parseLong(access_log[0]) + i)
                     .append("idc_id", access_log[1])
                     .append("house_id", Long.parseLong(access_log[2]))
                     .append("src_ip_long", Long.parseLong(access_log[3]))
@@ -123,9 +123,12 @@ public class TestParquetWriter {
         ParquetReader.Builder<Group> builder = ParquetReader.builder(new GroupReadSupport(), file);
 
         ParquetReader<Group> reader = builder.build();
-        SimpleGroup group = (SimpleGroup) reader.read();
-        System.out.println("schema:" + group.getType().toString());
-        System.out.println("idc_id:" + group.getString(1, 0));
+        SimpleGroup group;
+        while ((group = (SimpleGroup) reader.read()) != null) {
+//            System.out.println(group.toString());
+//            System.out.println("schema:" + group.getType().toString());
+            System.out.println("log_id:" + group.getLong(0, 0));
+        }
     }
 
     /**
@@ -138,9 +141,9 @@ public class TestParquetWriter {
     public static void main(String[] args) throws Exception {
 //        testParquetWriter();
 //        testGetSchema();
-        testParseSchema();
+//        testParseSchema();
 
-//        testParquetReader();
+        testParquetReader();
     }
 
 }
