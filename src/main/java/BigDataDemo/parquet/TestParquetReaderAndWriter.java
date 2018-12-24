@@ -81,7 +81,7 @@ public class TestParquetReaderAndWriter {
         Path file = new Path(parquet_file_path);
         ExampleParquetWriter.Builder builder = ExampleParquetWriter
                 .builder(file).withWriteMode(ParquetFileWriter.Mode.CREATE)
-                .withWriterVersion(ParquetProperties.WriterVersion.PARQUET_1_0)
+                .withWriterVersion(ParquetProperties.WriterVersion.PARQUET_2_0)
                 .withCompressionCodec(CompressionCodecName.SNAPPY)
                 //.withConf(configuration)
                 .withType(schema);
@@ -140,7 +140,7 @@ public class TestParquetReaderAndWriter {
      */
     public static void main(String[] args) throws Exception {
 //        testParquetWriter();
-        testGetSchema();
+//        testGetSchema();
 //        testParseSchema();
 
         testParquetReader();
