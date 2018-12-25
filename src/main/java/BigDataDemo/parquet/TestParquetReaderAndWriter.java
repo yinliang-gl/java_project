@@ -140,11 +140,11 @@ public class TestParquetReaderAndWriter {
      * @描述：
      */
     public static void main(String[] args) throws Exception {
-        testParquetWriter();
+//        testParquetWriter();
 //        testGetSchema();
 //        testParseSchema();
 
-//        testParquetReader();
+        testParquetReader();
     }
 
 }
