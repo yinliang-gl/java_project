@@ -94,15 +94,31 @@ public class TestParquetReaderAndWriter {
         SimpleGroupFactory groupFactory = new SimpleGroupFactory(schema);
         String[] access_log = {"111111", "22222", "33333", "44444", "55555",
                 "666666", "777777", "888888", "999999", "101010"};
-        for (int i = 0; i < 1000; i++) {
+        for (long i = 0; i < 2130000000; i++) {
+//        for (long i = 0; i < 10000000; i++) {
             Group group = groupFactory.newGroup()
                     .append("log_id", Long.parseLong(access_log[0]) + i)
                     .append("idc_id", access_log[1])
-                    .append("house_id", Long.parseLong(access_log[2]))
-                    .append("src_ip_long", Long.parseLong(access_log[3]))
-                    .append("dest_ip_long", Long.parseLong(access_log[4]))
-                    .append("src_port", Long.parseLong(access_log[5]))
-                    .append("dest_port", Long.parseLong(access_log[6]))
+                    .append("house_id", Long.parseLong(access_log[2]) + i)
+                    .append("src_ip_long", Long.parseLong(access_log[3]) + i)
+                    .append("dest_ip_long", Long.parseLong(access_log[4]) + i)
+                    .append("src_port", Long.parseLong(access_log[5]) + i - 1)
+                    .append("dest_port", Long.parseLong(access_log[6]) + i + 10)
+                    .append("protocol_type", Integer.parseInt(access_log[7]))
+                    .append("url64", access_log[8])
+                    .append("access_time", access_log[9]);
+            writer.write(group);
+        }
+        for (long i = 0; i < 2130000000; i++) {
+//        for (long i = 0; i < 10000000; i++) {
+            Group group = groupFactory.newGroup()
+                    .append("log_id", Long.parseLong(access_log[0]) + i)
+                    .append("idc_id", access_log[1])
+                    .append("house_id", Long.parseLong(access_log[2]) + i)
+                    .append("src_ip_long", Long.parseLong(access_log[3]) + i)
+                    .append("dest_ip_long", Long.parseLong(access_log[4]) + i)
+                    .append("src_port", Long.parseLong(access_log[5]) + i - 1)
+                    .append("dest_port", Long.parseLong(access_log[6]) + i + 10)
                     .append("protocol_type", Integer.parseInt(access_log[7]))
                     .append("url64", access_log[8])
                     .append("access_time", access_log[9]);
@@ -140,11 +156,11 @@ public class TestParquetReaderAndWriter {
      * @描述：
      */
     public static void main(String[] args) throws Exception {
-//        testParquetWriter();
+        testParquetWriter();
 //        testGetSchema();
 //        testParseSchema();
 
-        testParquetReader();
+//        testParquetReader();
     }
 
 }
